@@ -20,11 +20,28 @@ This project is a React-based shopping cart application that allows users to vie
 # Setting Up the Project
 
 - Create a `UserContext` in your `App.js` or a dedicated context file to manage the global state:
+  
+  ```bash
+  export const UserContext = React.createContext(); 
+  
 - Create the `Card` component in `components/Card.jsx`:
+  
+  ```bash
+  import { UserContext } from "../App";
+  
 - Passing your initial data through the `UserContext.Provider` value:
+  
+  ```bash
+  <UserContext.Provider
+   value={{ data, setData }}>
+          <Card />
+          <Total />
+  </UserContext.Provider>
+  
 
 # Project Structure
-
+ 
+ ```bash 
 shopping-cart/
 ├── public/
 │ ├── index.html
@@ -38,18 +55,21 @@ shopping-cart/
 │ ├── index.css
 ├── package.json
 ├── README.md
+ ```
 
 # Code Explanation
 
-** Card Component **
+*Card Component*
+
 The `Card` component displays each product and allows users to adjust the quantity. It calculates the subtotal for each product and updates the state accordingly.
 
-** Total Component **
+*Total Component*
+
 The `Total` component calculates and displays the overall total of all product subtotals.
 
 # website
 
-- [https://shopy-contextapi.netlify.app/]preview
+ - <a href = "https://shopy-contextapi.netlify.app/">preview
 
 # Contributions
 
